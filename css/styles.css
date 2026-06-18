@@ -110,12 +110,6 @@
         box-shadow: 0 3px 10px rgba(232, 197, 71, 0.12);
       }
 
-      .btn-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-
       @keyframes slide-thru {
         0% {
           transform: translateX(0);

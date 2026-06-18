@@ -16,7 +16,7 @@
         btn.addEventListener("click", (e) => {
           e.preventDefault();
 
-          const url = btn.href;
+          const url = btn.getAttribute('href');
 
           btn.classList.add("tapped");
 
