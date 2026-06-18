@@ -6,7 +6,9 @@ El objetivo fue construir una experiencia simple y enfocada en conversión para 
 
 ## Vista previa
 
-> Agregar aquí una captura de pantalla del Hero.
+## Vista previa
+
+![Vista previa de Prisma](./assets/prisma-preview.png)
 
 ## Objetivo
 
