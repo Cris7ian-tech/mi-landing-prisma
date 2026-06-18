@@ -6,8 +6,6 @@ El objetivo fue construir una experiencia simple y enfocada en conversión para 
 
 ## Vista previa
 
-## Vista previa
-
 ![Vista previa de Prisma](./assets/Hero-prisma.png)
 
 ## Objetivo
