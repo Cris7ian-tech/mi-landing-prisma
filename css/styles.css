@@ -1,0 +1,362 @@
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #0c0c0c;
+        --border: #222222;
+        --text: #f0ede6;
+        --muted: #6a6a6a;
+        --accent: #e8c547;
+        --radius: 3px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Syne", system-ui, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.72;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ─── HERO ────────────────────────────────────────── */
+      .hero {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 80px 24px 72px;
+      }
+
+      .hero-eyebrow {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 40px;
+      }
+
+      .hero-title {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(52px, 18vw, 148px);
+        font-weight: 700;
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+        margin-bottom: 48px;
+      }
+
+      .hero-title .brand {
+        display: block;
+        color: var(--text);
+      }
+
+      .hero-sub {
+        font-size: clamp(15px, 2.2vw, 18px);
+        font-weight: 400;
+        color: var(--muted);
+        max-width: 440px;
+        margin-bottom: 56px;
+        line-height: 1.65;
+      }
+
+      /* ─── BOTÓN ──────────────────────────────────────── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        background: var(--accent);
+        color: #0c0c0c;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 16px 28px;
+        border-radius: var(--radius);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: box-shadow 0.2s ease;
+        width: fit-content;
+      }
+
+      .btn-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+      }
+
+      .btn-icon {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+      }
+
+      .btn:hover {
+        box-shadow: 0 8px 24px rgba(232, 197, 71, 0.18);
+      }
+
+      .btn:active {
+        box-shadow: 0 3px 10px rgba(232, 197, 71, 0.12);
+      }
+
+      .btn-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      @keyframes slide-thru {
+        0% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        20% {
+          transform: translateX(110%);
+          opacity: 0;
+        }
+        21% {
+          transform: translateX(-110%);
+          opacity: 0;
+        }
+        87% {
+          transform: translateX(-110%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      /* Mouse: hover */
+      @media (hover: hover) {
+        .btn:hover .btn-label {
+          animation: slide-thru 600ms ease forwards;
+        }
+      }
+
+      /* Touch: clase agregada por JS en touchstart */
+      .btn.tapped .btn-label {
+        animation: slide-thru 600ms ease forwards;
+      }
+
+      /* ─── FADE-IN AL SCROLL ──────────────────────────── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ─── SECCIÓN BASE ───────────────────────────────── */
+      .section {
+        padding: 112px 28px;
+      }
+
+      .section-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 64px;
+      }
+
+      /* ─── BENEFITS ───────────────────────────────────── */
+      .benefits {
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .benefit {
+        padding: 56px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .benefit:last-child {
+        border-bottom: none;
+      }
+
+      .benefit-num {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+        margin-bottom: 24px;
+      }
+
+      .benefit-title {
+        font-size: clamp(20px, 3.5vw, 24px);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .benefit-desc {
+        color: var(--muted);
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.72;
+        max-width: 380px;
+      }
+
+      /* ─── STEPS ──────────────────────────────────────── */
+      .steps {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .step {
+        display: grid;
+        /* grid-template-columns: 52px 1fr; */
+        grid-template-columns: 40px 1fr;
+        gap: 20px;
+        padding: 52px 0;
+        border-bottom: 1px solid var(--border);
+        align-items: start;
+      }
+
+      .step:first-child {
+        border-top: 1px solid var(--border);
+      }
+
+      .step-num {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--accent);
+        padding-top: 4px;
+      }
+
+      .step-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .step-desc {
+        color: var(--muted);
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.72;
+      }
+
+      /* ─── CTA FINAL ──────────────────────────────────── */
+      .cta-final {
+        border-top: 1px solid var(--border);
+        text-align: center;
+        padding: 140px 28px;
+      }
+
+      .cta-final h2 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(36px, 9vw, 72px);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.025em;
+        margin-bottom: 28px;
+      }
+
+      .cta-final p {
+        color: var(--muted);
+        font-size: 16px;
+        margin-bottom: 52px;
+      }
+
+      /* ─── FOOTER ─────────────────────────────────────── */
+      footer {
+        padding: 36px 28px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* ─── DESKTOP ─────────────────────────────────────── */
+      @media (min-width: 720px) {
+        .hero {
+          padding: 160px 80px 120px;
+        }
+        .section {
+          padding: 140px 80px;
+        }
+        .cta-final {
+          padding: 160px 80px;
+        }
+        footer {
+          padding: 40px 80px;
+        }
+
+        .benefits-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .benefit {
+          padding: 64px 64px 64px 0;
+          border-bottom: none;
+          border-right: 1px solid var(--border);
+        }
+
+        .benefit:first-child {
+          padding-left: 0;
+        }
+
+        .benefit:last-child {
+          border-right: none;
+          padding-right: 0;
+          padding-left: 64px;
+        }
+
+        .benefit:nth-child(2) {
+          padding-left: 64px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .btn {
+          transition: none;
+        }
+        .btn-label {
+          animation: none !important;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .btn {
+          font-size: 12px;
+          padding: 14px 20px;
+        }
+
+        .btn-icon {
+          width: 16px;
+          height: 16px;
+        }
+      }
