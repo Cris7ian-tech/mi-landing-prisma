@@ -8,7 +8,7 @@ El objetivo fue construir una experiencia simple y enfocada en conversión para 
 
 ## Vista previa
 
-![Vista previa de Prisma](./assets/prisma-preview.png)
+![Vista previa de Prisma](./assets/Hero-prisma.png)
 
 ## Objetivo
 
